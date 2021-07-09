@@ -1,0 +1,64 @@
+---
+title: "Prueba_tutorial"
+author: "Alan Pardo"
+date: "9/7/2021"
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+  html_document:
+    toc: yes
+    toc_depth: 2
+lang: es-Es
+---
+
+# Titulo de primer nivel
+## Titulo de segundo nivel
+### Titulo de tercer nivel
+
+*texto en cursiva*
+
+**texto en negrita**
+
+***texto en negrita y cursiva***
+
+[Maxima Formacion](https://maximaformacion.es)
+
+![knit en rmarkdown](captura/Alan Pardo.jpg)
+
+La ecuación sería $e = mc^{2}$
+
+```{r}
+data(iris)
+head(iris)
+```
+
+```{r echo=FALSE}
+#si quisiera mostrar el resultado pero NO el codigo
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+
+```{r eval=FALSE}
+#si quisiera mostrar el codigo pero NO el resultado
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+
+```{r warning=FALSE}
+#cuando NO queremos que aparezcan los warnings en el markdown
+data("HairEyeColor")
+HairEyeColor
+chisq.test(HairEyeColor[,,2])
+```
+
+```{r message=FALSE, warning=FALSE}
+#si queremos que en los resultados no se muestren mensajes (e.g. cuando cargamos alguna library)
+library(AlphaSimR)
+
+```
+
+Cuidado con el nombre de las variables!
+```{r error=TRUE, warning=FALSE}
+library(ggplot2)
+data("iris")
+ggplot(iris, aes(Sepal.Width, Sepal.Legth))+ geom_point()
+```
